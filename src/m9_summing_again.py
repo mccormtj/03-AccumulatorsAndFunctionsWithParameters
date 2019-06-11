@@ -29,6 +29,22 @@ def run_test_sum_powers():
     print('Testing the   sum_powers   function:')
     print('--------------------------------------------------')
 
+    answer = sum_powers(5, -0.3)
+    expected = 3.8082633077875565
+    print('Test 1 Expected:', expected)
+    print('         Actual:', answer)
+    print('--------------------------------------------------')
+
+    answer = sum_powers(6, -0.3)
+    expected = 4.392453988855422
+    print('Test 2 Expected:', expected)
+    print('         Actual:', answer)
+    print('--------------------------------------------------')
+
+    answer = sum_powers(7, -0.3)
+    expected = 4.950243814158668
+    print('Test 3 Expected:', expected)
+    print('         Actual:', answer)
 
 def sum_powers(n, p):
     """
@@ -49,7 +65,10 @@ def sum_powers(n, p):
     #   No fair running the code of  sum_powers  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
+    sum = 0
+    for k in range (n):
+        sum = sum + (k+1) ** p
+    return sum
 
 def run_test_sum_powers_in_range():
     """ Tests the   sum_powers_in_range   function. """
@@ -65,6 +84,23 @@ def run_test_sum_powers_in_range():
     print('--------------------------------------------------')
     print('Testing the   sum_powers_in_range   function:')
     print('--------------------------------------------------')
+
+    answer = sum_powers_in_range(3, 100, 0.1)
+    expected = 142.3847764816299
+    print('Test 1 Expected:', expected)
+    print('         Actual:', answer)
+    print('--------------------------------------------------')
+
+    answer = sum_powers_in_range(5, 100, 0.1)
+    expected = 140.119954952599
+    print('Test 2 Expected:', expected)
+    print('         Actual:', answer)
+    print('--------------------------------------------------')
+
+    answer = sum_powers_in_range(6, 100, 0.1)
+    expected = 138.94533600951098
+    print('Test 3 Expected:', expected)
+    print('         Actual:', answer)
 
 
 def sum_powers_in_range(m, n, p):
@@ -86,7 +122,10 @@ def sum_powers_in_range(m, n, p):
     #   No fair running the code of  sum_powers_in_range  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
+    sum = 0
+    for k in range (n-m + 1):
+        sum = sum + (m + k) ** p
+    return sum
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
